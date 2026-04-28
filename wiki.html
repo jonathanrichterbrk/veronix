@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki | Veronix</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="main.js" defer></script>
+</head>
+<body class="bg-gray-900 text-gray-100 flex flex-col min-h-screen font-sans">
+
+    <nav class="bg-gray-800 border-b border-gray-700 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center gap-2">
+                    <span class="text-2xl font-bold tracking-wider text-white">
+                        VERO<span class="text-emerald-500">NIX</span>
+                    </span>
+                </a>
+                
+                <div class="flex items-center gap-6">
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-emerald-400 transition-colors" data-i18n="nav_home">Home</a>
+                        <a href="plugins.html" class="text-gray-300 hover:text-emerald-400 transition-colors" data-i18n="nav_plugins">Plugins</a>
+                        <a href="wiki.html" class="text-white hover:text-emerald-400 transition-colors" data-i18n="nav_wiki">Wiki</a>
+                        <a href="https://discord.gg/RAWdRkHtFS" target="_blank" class="text-gray-300 hover:text-emerald-400 transition-colors">Discord</a>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 border-l border-gray-600 pl-6">
+                        <button onclick="switchLanguage('en')" id="btn-en" class="text-sm font-bold text-emerald-500 hover:text-emerald-400 transition-colors">EN</button>
+                        <span class="text-gray-600">|</span>
+                        <button onclick="switchLanguage('de')" id="btn-de" class="text-sm font-bold text-gray-400 hover:text-emerald-400 transition-colors">DE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-12 w-full flex flex-col md:flex-row gap-8">
+        
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <div class="bg-gray-800 rounded-xl border border-gray-700 p-6 sticky top-8">
+                <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-2" data-i18n="wiki_nav_title">Dokumentation</h3>
+                <ul class="space-y-3 mb-8">
+                    <li>
+                        <a href="#" onclick="showDefaultWiki(event)" class="text-emerald-400 font-medium hover:text-emerald-300 transition-colors" data-i18n="wiki_link_start">Erste Schritte</a>
+                    </li>
+                </ul>
+
+                <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-2 flex items-center gap-2">
+                    <span data-i18n="wiki_nav_plugins">Unsere Plugins</span>
+                </h3>
+                <ul class="space-y-3" id="wiki-plugin-list">
+                    <li class="text-gray-500 text-sm italic" data-i18n="loading">Verbinde mit Modrinth...</li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="flex-grow bg-gray-800 rounded-xl border border-gray-700 p-8 shadow-xl overflow-x-auto" id="wiki-content">
+            <div id="default-wiki-content">
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-6" data-i18n="wiki_page_title">Erste Schritte</h1>
+                <div class="prose prose-invert max-w-none text-gray-300 space-y-6">
+                    <p data-i18n="wiki_text_1">Willkommen im offiziellen Veronix Wiki! Wähle links ein Plugin aus der Liste, um dessen Befehle und Dokumentation anzuzeigen.</p>
+                    <h2 class="text-2xl font-semibold text-white mt-8 mb-4" data-i18n="wiki_sub_title_1">Allgemeine Installation</h2>
+                    <ul class="list-disc pl-5 space-y-2" data-i18n="wiki_list_1">
+                        <li>Lade das Plugin herunter.</li>
+                        <li>Ziehe die .jar-Datei in den <code>/plugins</code>-Ordner.</li>
+                        <li>Starte den Server neu.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-800 mt-12 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-500" data-i18n="footer_text">&copy; 2026 Veronix Development. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>
